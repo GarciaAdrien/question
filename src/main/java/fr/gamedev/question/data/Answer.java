@@ -11,51 +11,55 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Answer {
-	
-	@GeneratedValue
-	@Id
-	private long id;
-	
-	@OneToOne
-	private Question question;
-	private Boolean correctAnswer;
-	
-	
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
-	/**
-	 * @return the question
-	 */
-	public Question getQuestion() {
-		return question;
-	}
-	/**
-	 * @param question the question to set
-	 */
-	public void setQuestion(Question question) {
-		this.question = question;
-	}
-	/**
-	 * @return the correctAnswer
-	 */
-	public Boolean getCorrectAnswer() {
-		return correctAnswer;
-	}
-	/**
-	 * @param correctAnswer the correctAnswer to set
-	 */
-	public void setCorrectAnswer(Boolean correctAnswer) {
-		this.correctAnswer = correctAnswer;
-	}
-	
+    /**
+     * Answer id.
+     */
+    @GeneratedValue
+    @Id
+    private long id;
+    /**
+     * Answer question.
+     */
+    @OneToOne
+    private Question question;
+    /**
+     * Answer correct answer.
+     */
+    private Boolean correctAnswer;
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+    /**
+     * @param newId the id to set
+     */
+    public void setId(final long newId) {
+        this.id = newId;
+    }
+    /**
+     * @return the question
+     */
+    public Question getQuestion() {
+        return question;
+    }
+    /**
+     * @param newQuestion the question to set
+     */
+    public void setQuestion(final Question newQuestion) {
+        this.question = newQuestion;
+    }
+    /**
+     * @return the correctAnswer
+     */
+    public Boolean getCorrectAnswer() {
+        return correctAnswer;
+    }
+    /**
+     * @param newCorrectAnswer the correctAnswer to set
+     */
+    public void setCorrectAnswer(final Boolean newCorrectAnswer) {
+        this.correctAnswer = newCorrectAnswer;
+    }
 }

@@ -10,22 +10,25 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ResponseController {
-	
-	@GetMapping("/response")
-	public String answer(@RequestParam long questionId, @RequestParam Boolean answer, @RequestParam long userId) {
-		String response;
-		
-		if(answer == Boolean.TRUE) {
-			//Ajouter des points
-			
-			response = "Bravo ! vous avez trouvé ! ";
-		}else {
-			//Ne pas ajouter de points
-			
-			response = "Oops ! Ca n'est pas correcte";
-		}
-		
-		return response;
-	}
+    /**
+     * @param questionId question id
+     * @param answer answer
+     * @param userId user id
+     * @return correction of the answer of the question
+     */
+    @GetMapping("/response")
+    public String answer(@RequestParam final long questionId,
+                         @RequestParam final Boolean answer,
+                         @RequestParam final long userId) {
+        String response;
+        if (answer == Boolean.TRUE) {
+            //Ajouter des points
+            response = "Bravo ! vous avez trouvé ! ";
+        } else {
+            //Ne pas ajouter de points
+            response = "Oops ! Ca n'est pas correcte";
+        }
+        return response;
+    }
 
 }

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package fr.gamedev.question.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
